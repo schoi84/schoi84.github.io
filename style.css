@@ -1,0 +1,77 @@
+/* 변기요 안내 페이지. 앱과 같은 Butter 톤(크림 바탕·파랑 / 어두운 갈색 바탕·버터 옐로). */
+:root {
+  --bg: #FDFBE4;
+  --surface: #FFFFFF;
+  --ink: #1d1c11;
+  --muted: #605f52;
+  --line: #e5e3d4;
+  --accent: #225BFF;
+  --font-display: "Do Hyeon", "IBM Plex Sans KR", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #261A13;
+    --surface: #3A2A1F;
+    --ink: #f3f2e2;
+    --muted: #adac9e;
+    --line: #4c3e32;
+    --accent: #FDEE8C;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 40px 72px;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.brand {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: 22px; color: var(--ink); text-decoration: none;
+}
+.brand-mark {
+  width: 28px; height: 28px; border-radius: 8px; background: var(--accent);
+  display: inline-block;
+}
+nav.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 36px; }
+nav.top ul { list-style: none; display: flex; flex-wrap: wrap; gap: 16px; margin: 0; padding: 0; font-size: 14px; }
+
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 34px; line-height: 1.2; margin: 0 0 8px; text-wrap: balance; }
+h2 { font-size: 19px; margin: 36px 0 8px; line-height: 1.4; }
+h3 { font-size: 16px; margin: 20px 0 4px; }
+p, ul, ol, table { margin: 0 0 12px; }
+ul, ol { padding-left: 1.3em; }
+li + li { margin-top: 4px; }
+.meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+.note { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 15px; }
+
+.table-wrap { overflow-x: auto; margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--surface); }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border: 1px solid var(--line); }
+th { font-weight: 600; white-space: nowrap; }
+
+.hero p { font-size: 18px; color: var(--muted); max-width: 32em; }
+.links { list-style: none; padding: 0; display: grid; gap: 10px; margin-top: 28px; }
+.links a {
+  display: block; padding: 14px 16px; border-radius: 12px; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); color: var(--ink); font-weight: 500;
+}
+.links a span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); }
+
+footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
